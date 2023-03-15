@@ -1,0 +1,10 @@
+#!/bin/bash
+
+df -H | awk  '{print $5 " " $1}' | while read output;
+
+do 
+#echo "Disk Detail: $output"
+usage=$(echo $output | awk '{print $1}' | cut -d'%' -f1)
+echo $usage
+done
+
